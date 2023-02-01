@@ -44,7 +44,7 @@ const userRoutes = require('./routes/users');
 
 mongoose.set('strictQuery', true);
 
-mongoose.connect('mongodb://127.0.0.1:27017/yelp-camp', {
+mongoose.connect(dbUrl, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 
@@ -172,5 +172,5 @@ app.use((err, req, res, next) => {
 })
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
-    console.log('Serving on port ${port}');
+    console.log(`Serving on port ${port}`);
 }) 
